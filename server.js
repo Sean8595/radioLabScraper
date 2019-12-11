@@ -2,6 +2,7 @@
 var express = require("express");
 var mongojs = require("mongojs");
 var logger = require("morgan");
+var mongoose = require('mongoose')
 //use these to scrape
 var cheerio = require("cheerio");
 var axios = require("axios");
@@ -14,6 +15,7 @@ var collections = ["radioLab"];
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 app.use(logger("dev"));
+mongoose.connect("mongodb://localhost/unit18Populater", { useNewUrlParser: true });
 
 require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
@@ -27,3 +29,4 @@ db.on("error", function(error) {
 app.listen(3000, function() {
   console.log("==> 🌎 App running on port 3000!");
 });
+module.exports = app;
