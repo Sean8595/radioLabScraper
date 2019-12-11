@@ -1,0 +1,28 @@
+<h1>Radio Lab Scraper!</h1>
+<ul>
+  {{#each articles}}
+    {{#unless saved}}
+      {{> articles/articles saved=true}}
+    {{/unless}}
+  {{/each}}
+</ul>
+
+<h2>Saved Articles!</h2>
+
+<ul>
+  {{#each articles}}
+    {{#if saved}}
+      {{> articles/articles saved=false}}
+    {{/if}}
+  {{/each}}
+</ul>
+
+<form class="create-form">
+  <div class="form-group">
+    <label for="save">Save Article?</label><br>
+    <input type="button" name="save-button"> Save!<br>
+    <input type="button" name="save-button"> Unsave <br>
+  </div>
+
+  <button type="submit" href = "/saved-articles">Check out saved articles</button>
+</form>
