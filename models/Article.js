@@ -3,7 +3,7 @@ var mongoose = require("mongoose");
 // Save a reference to the Schema constructor
 var Schema = mongoose.Schema;
 
-var ArticleSchema = new Schema({
+var RadioLabSchema = new Schema({
     // `title` is required and of type String
     title: {
       type: String,
@@ -22,7 +22,7 @@ var ArticleSchema = new Schema({
       ref: "Note"
     }
   });
-  var Article = mongoose.model("Article", ArticleSchema);
+  var RadioLab = mongoose.model("RadioLab", RadioLabSchema);
 
 // Export the Article model
-module.exports = Article;
+module.exports = RadioLab;

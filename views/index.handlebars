@@ -9,19 +9,25 @@
 
 <h2>Saved Articles!</h2>
 
-<ul>
-  {{#each articles}}
-    {{#if saved}}
-      {{> articles/articles saved=false}}
-    {{/if}}
-  {{/each}}
-</ul>
+<div class="card text-center">
+  <div class="card-header">
+    Featured
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Special title treatment</h5>
+    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+  <div class="card-footer text-muted">
+    2 days ago
+  </div>
+</div>
+
 
 <form class="create-form">
   <div class="form-group">
     <label for="save">Save Article?</label><br>
-    <input type="button" name="save-button"> Save!<br>
-    <input type="button" name="save-button"> Unsave <br>
   </div>
 
   <button type="submit" href = "/saved-articles">Check out saved articles</button>

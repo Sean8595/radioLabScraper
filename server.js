@@ -15,7 +15,7 @@ var collections = ["radioLab"];
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 app.use(logger("dev"));
-mongoose.connect("mongodb://localhost/unit18Populater", { useNewUrlParser: true });
+mongoose.connect("mongodb://localhost/radioLabDB", { useNewUrlParser: true });
 
 require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
