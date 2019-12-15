@@ -7,9 +7,10 @@
 </div>
 <div class="row ">
   <div class="col-sm-6 mx-auto">
+    <div id="articles">
   {{#each articles}}
 <div class="card text-right" >
-  <div class="card-header text-left">
+  <div id = "title" class="card-header text-left">
     {{title}}
   </div>
   <div class="card-body" >
@@ -33,7 +34,7 @@
     <h2 class="card-title"><h2>
      <p class="card-text">{{teaser}}</p>
     <a href="https://www.wnycstudios.org{{link}}" class="btn btn-primary">Go to Podcast!</a>
-    <a class="btn btn-primary" class = "card text-right">Delete</a>
+    <a class="btn btn-primary" id = "delete" class = "card text-right">Delete</a>
     <a class="btn btn-primary" class = "card text-right">Delete</a>
      </div>
   <div class="card-footer text-muted">
@@ -42,5 +43,7 @@
 </div>
     {{/each}}
     {{/if}}
+    </div>
+      <div id="notes"></div>
   </div>
   </div>
