@@ -1,34 +1,46 @@
-<h1>Radio Lab Scraper!</h1>
-<ul>
-  {{#each articles}}
-    {{#unless saved}}
-      {{> articles/articles saved=true}}
-    {{/unless}}
-  {{/each}}
-</ul>
-
-<h2>Saved Articles!</h2>
-
-<div class="card text-center">
-  <div class="card-header">
-    Featured
-  </div>
-  <div class="card-body">
-    <h5 class="card-title">Special title treatment</h5>
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-  <div class="card-footer text-muted">
-    2 days ago
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Radio Lab Scraper!</h1>
+    <p class="lead">Click to scrape!</p>
+    <a class="btn btn-primary btn-lg" href="/articles/scrape" role="button">Scrape!</a>
   </div>
 </div>
-
-
-<form class="create-form">
-  <div class="form-group">
-    <label for="save">Save Article?</label><br>
+<div class="row ">
+  <div class="col-sm-6 mx-auto">
+  {{#each articles}}
+<div class="card text-right" >
+  <div class="card-header text-left">
+    {{title}}
   </div>
-
-  <button type="submit" href = "/saved-articles">Check out saved articles</button>
-</form>
+  <div class="card-body" >
+    <h2 class="card-title"><h2>
+     <p class="card-text">{{teaser}}</p>
+    <a href="https://www.wnycstudios.org{{link}}" class="btn btn-primary">Go to Podcast!</a>
+    <a class="btn btn-primary" id = "save" class ="card text-right">Save</a>
+     </div>
+  <div class="card-footer text-muted">
+        {{date}}
+  </div>
+</div>
+    {{/each}}
+  {{#if saved }}
+ {{#each articles}}
+<div class="card text-right" >
+  <div class="card-header text-left">
+    {{title}}
+  </div>
+  <div class="card-body" >
+    <h2 class="card-title"><h2>
+     <p class="card-text">{{teaser}}</p>
+    <a href="https://www.wnycstudios.org{{link}}" class="btn btn-primary">Go to Podcast!</a>
+    <a class="btn btn-primary" class = "card text-right">Delete</a>
+    <a class="btn btn-primary" class = "card text-right">Delete</a>
+     </div>
+  <div class="card-footer text-muted">
+        {{date}}
+  </div>
+</div>
+    {{/each}}
+    {{/if}}
+  </div>
+  </div>

@@ -7,19 +7,29 @@ var RadioLabSchema = new Schema({
     // `title` is required and of type String
     title: {
       type: String,
-      required: true
+      required: false,
+      unique: false
     },
     teaser: {
         type: String,
-        required: true
+        required: false
     },
     link: {
       type: String,
-      required: true
+      required: false
     },
     note: {
       type: Schema.Types.ObjectId,
       ref: "Note"
+    },
+    saved: {
+      type: Boolean,
+      value: false,
+      ref: "Saved"
+    },
+    date: {
+      type: String,
+      required: false
     }
   });
   var RadioLab = mongoose.model("RadioLab", RadioLabSchema);
