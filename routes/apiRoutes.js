@@ -34,7 +34,7 @@ router.get("/scrape", function(req, res) {
       });
   });
  router.get("/", function(req, res) {
-    // Grab every document in the Articles collection
+  
     db.RadioLab.find({})
       .then(function(dbArticle) {
         // If we were able to successfully find Articles, send them back to the client

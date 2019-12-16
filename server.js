@@ -1,7 +1,6 @@
 var express = require('express');
 var mongoose = require('mongoose');
 var exphbs = require("express-handlebars");
-
 var PORT = process.env.PORT || 8080;
 var app = express();
 //HTML Route
@@ -19,7 +18,8 @@ app.use(routes);
 
 //Database connection
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/radioLabDB";
-
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
+mongoose.set('useCreateIndex', true);
 mongoose.connect(MONGODB_URI);
 
 app.listen(PORT, function() {
